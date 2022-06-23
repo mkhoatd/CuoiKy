@@ -18,19 +18,28 @@
             {
                 context.HocPhans.Add(new DTO.HocPhan
                 {
-                    TenHocPhan = "A",
+                    Id="1",
+                    TenHocPhan = "A"
                 });
                 context.SaveChanges();
-                context.SinhViens.Add(new DTO.SinhVien
+                try
                 {
-                    TenSinhVien = "NVA",
-                    LopSinhHoat = "A1",
-                    GioiTinh = false,
-                    DiemBaiTap = 0,
-                    DiemGiuaKy = 0,
-                    NgayThi = DateTime.Now,
-                    HocPhan = context.HocPhans.FirstOrDefault(h=>true)
-                });
+                    context.SinhViens.Add(new DTO.SinhVien
+                    {
+                        Id="1",
+                        TenSinhVien = "NVA",
+                        LopSinhHoat = "A1",
+                        GioiTinh = false,
+                        DiemBaiTap = 0,
+                        DiemGiuaKy = 0,
+                        NgayThi = DateTime.Now,
+                        HocPhanId = context.HocPhans.FirstOrDefault(h => true).Id
+                    });
+                }
+                catch(Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
                 context.SaveChanges();
             }
         }
