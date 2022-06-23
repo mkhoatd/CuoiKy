@@ -60,10 +60,13 @@ namespace CuoiKy.BLL
                     HocPhanId = _context.HocPhans.FirstOrDefault(hp => hp.TenHocPhan == sv.TenHocPhan).Id
                 });
             }
+            _context.SaveChanges();
         }
         public void Delete(List<string> SinhvienIds)
         {
-            throw new NotImplementedException();
+            var svs=_context.SinhViens.Where(s=>SinhvienIds.Contains(s.Id)).ToList();
+            _context.SinhViens.RemoveRange(svs);
+            _context.SaveChanges();
         }
     }
 }
