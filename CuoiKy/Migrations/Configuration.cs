@@ -14,10 +14,25 @@
 
         protected override void Seed(CuoiKy.DAL.DiemHocPhanDbContext context)
         {
-            //  This method will be called after migrating to the latest version.
-
-            //  You can use the DbSet<T>.AddOrUpdate() helper extension method
-            //  to avoid creating duplicate seed data.
+            if(!context.SinhViens.Any())
+            {
+                context.HocPhans.Add(new DTO.HocPhan
+                {
+                    TenHocPhan = "A",
+                });
+                context.SaveChanges();
+                context.SinhViens.Add(new DTO.SinhVien
+                {
+                    TenSinhVien = "NVA",
+                    LopSinhHoat = "A1",
+                    GioiTinh = false,
+                    DiemBaiTap = 0,
+                    DiemGiuaKy = 0,
+                    NgayThi = DateTime.Now,
+                    HocPhan = context.HocPhans.FirstOrDefault(h=>true)
+                });
+                context.SaveChanges();
+            }
         }
     }
 }
