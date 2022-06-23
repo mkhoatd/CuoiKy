@@ -35,7 +35,7 @@ namespace CuoiKy.BLL
             var result = _context.SinhViens.Select(s => new SinhVienDTO(s))
                 .Where(s => String.IsNullOrEmpty(name) ? true : s.TenSinhVien.Contains(name))
                 .Where(s => string.IsNullOrEmpty(TenHocPhan) ? true : s.TenHocPhan.Contains(TenHocPhan));
-            if(string.IsNullOrEmpty(orderBy)) return result.ToList();
+            return result.ToList();
              
         }
         
