@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace CuoiKy
 {
-    public partial class Form1 : Form
+    public partial class DetailForm : Form
     {
-        public Form1()
+        public DetailForm()
         {
             InitializeComponent();
         }

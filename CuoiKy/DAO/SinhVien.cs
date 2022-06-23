@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CuoiKy.DTO
+namespace CuoiKy.DAO
 {
     public class SinhVien
     {
