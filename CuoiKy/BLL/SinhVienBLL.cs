@@ -36,6 +36,8 @@ namespace CuoiKy.BLL
             if (orderBy == "Lớp sinh hoạt") result.OrderByDescending(s => s.LopSinhHoat);
             if (orderBy == "Điểm bài tập") result.OrderByDescending(s => s.DiemBaiTap);
             if (orderBy == "Điểm giữa kỳ") result.OrderByDescending(s => s.DiemGiuaKy);
+            if (orderBy == "Điểm cuối kỳ") result.OrderByDescending(s => s.DiemCuoiKy);
+            if (orderBy == "Tổng kết") result.OrderByDescending(s => s.TongKet);
             if (orderBy == "Học phần") result.OrderByDescending(s => s.TenHocPhan);
             return result.ToList();
         }
@@ -70,7 +72,7 @@ namespace CuoiKy.BLL
         }
         public void Delete(List<string> SinhvienIds)
         {
-            var svs=_context.SinhViens.Where(s=>SinhvienIds.Contains(s.Id)).ToList();
+            var svs = _context.SinhViens.Where(s => SinhvienIds.Contains(s.Id)).ToList();
             _context.SinhViens.RemoveRange(svs);
             _context.SaveChanges();
         }
