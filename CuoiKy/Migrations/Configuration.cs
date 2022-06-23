@@ -21,8 +21,13 @@ namespace CuoiKy.Migrations
             {
                 context.HocPhans.Add(new DAO.HocPhan
                 {
-                    Id = "1",
-                    TenHocPhan = "A"
+                    Id = System.Guid.NewGuid().ToString(),
+                    TenHocPhan = "C"
+                });
+                context.HocPhans.Add(new DAO.HocPhan
+                {
+                    Id = System.Guid.NewGuid().ToString(),
+                    TenHocPhan = "B"
                 });
                 context.SaveChanges();
             }
@@ -31,14 +36,25 @@ namespace CuoiKy.Migrations
 
                 context.SinhViens.Add(new DAO.SinhVien
                 {
-                    Id = "1",
-                    TenSinhVien = "NVA",
+                    Id = System.Guid.NewGuid().ToString(),
+                    TenSinhVien = "NVC",
                     LopSinhHoat = "A1",
                     GioiTinh = false,
                     DiemBaiTap = 0,
                     DiemGiuaKy = 0,
                     NgayThi = DateTime.Now,
                     HocPhanId = context.HocPhans.FirstOrDefault(h => true).Id
+                });
+                context.SinhViens.Add(new DAO.SinhVien
+                {
+                    Id = System.Guid.NewGuid().ToString(),
+                    TenSinhVien = "NVB",
+                    LopSinhHoat = "A1",
+                    GioiTinh = false,
+                    DiemBaiTap = 0,
+                    DiemGiuaKy = 0,
+                    NgayThi = DateTime.Now,
+                    HocPhanId = context.HocPhans.FirstOrDefault(h => h.TenHocPhan=="B").Id
                 });
                 context.SaveChanges();
             }

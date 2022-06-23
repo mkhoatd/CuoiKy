@@ -50,33 +50,40 @@ namespace CuoiKy
 
         private void btAdd_Click(object sender, EventArgs e)
         {
-            DetailForm frm = new DetailForm();
-            frm.ShowDialog();
+            DetailForm form = new DetailForm("", LoadData);
+            form.ShowDialog();
         }
 
         private void btUpdate_Click(object sender, EventArgs e)
         {
             if(dataGridView1.SelectedRows.Count == 1)
             {
-                DetailForm form = new DetailForm(dataGridView1.SelectedRows[0].Cells[0].Value.ToString());
+                DetailForm form = new DetailForm(dataGridView1.SelectedRows[0].Cells[0].Value.ToString(),LoadData);
+                form.ShowDialog();
+
             }
-            
+
 
         }
 
         private void btDel_Click(object sender, EventArgs e)
         {
-            
+            var ids = new List<string>();
+            foreach(DataGridViewRow row in dataGridView1.SelectedRows)
+            {
+                ids.Append(row.Cells[0].Value.ToString());
+            }
+            sinhVienBLL.Delete(ids);
         }
 
         private void btSort_Click(object sender, EventArgs e)
         {
-
+            LoadData();
         }
 
         private void btSearch_Click(object sender, EventArgs e)
         {
-
+            LoadData();
         }
     }
 }

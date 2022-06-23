@@ -28,7 +28,9 @@ namespace CuoiKy.BLL
         }
         public List<HocPhanCBB> GetAllHocPhanCBBs()
         {
-            var hocphans=_context.HocPhans.ToList();
+            var hocphans=_context.HocPhans.ToList();//Only parameterless constructors and initializers are
+                                                    //supported in LINQ to Entities nen phai chuyen thanh
+                                                    //DAO truoc do k tao query thang vao db dc
             return hocphans.Select(h=>new HocPhanCBB(h)).ToList();
         }
         

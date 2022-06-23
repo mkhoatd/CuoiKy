@@ -35,5 +35,7 @@ namespace CuoiKy.DTO
             NgayThi = s.NgayThi;
             TenHocPhan = s.HocPhan.TenHocPhan;
         }
+        public SinhVienDTO()
+        { }
     }
 }
