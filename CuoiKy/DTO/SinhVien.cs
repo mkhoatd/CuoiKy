@@ -15,7 +15,7 @@ namespace CuoiKy.DTO
         public double DiemBaiTap { get; set; }
         public double DiemGiuaKy { get; set; }
         public DateTime NgayThi { get; set; }
-        public virtual string HocPhanId { get; set; }
-        public HocPhan HocPhan { get; set; }
+        public string HocPhanId { get; set; }
+        public virtual HocPhan HocPhan { get; set; }
     }
 }
