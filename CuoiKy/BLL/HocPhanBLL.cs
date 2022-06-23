@@ -28,10 +28,15 @@ namespace CuoiKy.BLL
         }
         public List<HocPhanCBB> GetAllHocPhanCBBs()
         {
-            var hocphans=_context.HocPhans.ToList();//Only parameterless constructors and initializers are
-                                                    //supported in LINQ to Entities nen phai chuyen thanh
-                                                    //DAO truoc do k tao query thang vao db dc
-            return hocphans.Select(h=>new HocPhanCBB(h)).ToList();
+            return _context.HocPhans.Select(h => new HocPhanCBB(h)).ToList();
+        }
+        public List<SinhVienDTO> GetAllSinhVienDTOs(string name="",string TenHocPhan="", string orderBy="")
+        {
+            var result = _context.SinhViens.Select(s => new SinhVienDTO(s))
+                .Where(s => String.IsNullOrEmpty(name) ? true : s.TenSinhVien.Contains(name))
+                .Where(s => string.IsNullOrEmpty(TenHocPhan) ? true : s.TenHocPhan.Contains(TenHocPhan));
+            if(string.IsNullOrEmpty(orderBy)) return result.ToList();
+             
         }
         
     }

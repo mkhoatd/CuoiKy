@@ -74,7 +74,7 @@ namespace CuoiKy.BLL
         }
         public void Delete(List<string> SinhvienIds)
         {
-            var svs=_context.SinhViens.Where(s=>SinhvienIds.Contains(s.Id)).ToList();
+            var svs = _context.SinhViens.Where(s => SinhvienIds.Contains(s.Id)).ToList();
             _context.SinhViens.RemoveRange(svs);
             _context.SaveChanges();
         }
