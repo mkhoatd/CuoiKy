@@ -36,7 +36,34 @@ namespace CuoiKy.BLL
                 .Where(s => String.IsNullOrEmpty(name) ? true : s.TenSinhVien.Contains(name))
                 .Where(s => string.IsNullOrEmpty(TenHocPhan) ? true : s.TenHocPhan.Contains(TenHocPhan));
             return result.ToList();
-             
+        }
+        public void AddOrUpdate(SinhVienDTO sv)
+        {
+            if(_context.SinhViens.Any(s=>s.Id==sv.Id))
+            {
+                var s = _context.SinhViens.Find(sv.Id);
+                s.TenSinhVien = sv.TenSinhVien;
+                s.LopSinhHoat = sv.LopSinhHoat;
+                s.GioiTinh = sv.GioiTinh;
+                s.DiemBaiTap=sv.DiemBaiTap;
+                s.DiemGiuaKy = sv.DiemGiuaKy;
+                s.NgayThi = sv.NgayThi;
+                s.HocPhanId=_context.HocPhans.FirstOrDefault(hp=>hp.TenHocPhan==sv.TenHocPhan).Id;
+            }
+            else
+            {
+                _context.SinhViens.Add(new DAO.SinhVien
+                {
+                    Id = System.Guid.NewGuid().ToString(),
+                    TenSinhVien=sv.TenSinhVien,
+                    LopSinhHoat=sv.LopSinhHoat,
+                    GioiTinh=sv.GioiTinh,
+                    DiemBaiTap=sv.DiemBaiTap,
+                    DiemGiuaKy=sv.DiemGiuaKy,
+                    NgayThi=sv.NgayThi,
+                    HocPhanId=_context.HocPhans.FirstOrDefault(hp=>hp.TenHocPhan ==sv.TenHocPhan).Id
+                });
+            }
         }
         
     }
