@@ -16,8 +16,8 @@ namespace CuoiKy.BLL
         {
             _context = new DiemHocPhanDbContext();
         }
-        private HocPhanBLL _instance { get; set; }
-        public HocPhanBLL Instance
+        private static HocPhanBLL _instance { get; set; }
+        public static HocPhanBLL Instance
         {
             get
             {
@@ -28,15 +28,8 @@ namespace CuoiKy.BLL
         }
         public List<HocPhanCBB> GetAllHocPhanCBBs()
         {
-            return _context.HocPhans.Select(h => new HocPhanCBB(h)).ToList();
-        }
-        public List<SinhVienDTO> GetAllSinhVienDTOs(string name="",string TenHocPhan="", string orderBy="")
-        {
-            var result = _context.SinhViens.Select(s => new SinhVienDTO(s))
-                .Where(s => String.IsNullOrEmpty(name) ? true : s.TenSinhVien.Contains(name))
-                .Where(s => string.IsNullOrEmpty(TenHocPhan) ? true : s.TenHocPhan.Contains(TenHocPhan));
-            if(string.IsNullOrEmpty(orderBy)) return result.ToList();
-             
+            var hocphans=_context.HocPhans.ToList();
+            return hocphans.Select(h=>new HocPhanCBB(h)).ToList();
         }
         
     }

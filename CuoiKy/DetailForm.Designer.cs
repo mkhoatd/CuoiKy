@@ -291,6 +291,7 @@
             this.Name = "DetailForm";
             this.Text = "DetailForm";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.DetailForm_FormClosing);
+            this.Load += new System.EventHandler(this.DetailForm_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

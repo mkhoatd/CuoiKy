@@ -41,5 +41,10 @@ namespace CuoiKy
 
 
         }
+
+        private void DetailForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -82,6 +82,10 @@
     <Compile Include="Migrations\202206230043057_Initial.designer.cs">
       <DependentUpon>202206230043057_Initial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202206230853090_fix.cs" />
+    <Compile Include="Migrations\202206230853090_fix.designer.cs">
+      <DependentUpon>202206230853090_fix.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -93,6 +97,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202206230043057_Initial.resx">
       <DependentUpon>202206230043057_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202206230853090_fix.resx">
+      <DependentUpon>202206230853090_fix.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

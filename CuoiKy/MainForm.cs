@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CuoiKy.BLL;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,11 +13,31 @@ namespace CuoiKy
 {
     public partial class MainForm : Form
     {
+        HocPhanBLL hocPhanBLL = HocPhanBLL.Instance;
+        SinhVienBLL sinhVienBLL= SinhVienBLL.Instance;
         public MainForm()
         {
             InitializeComponent();
+            LoadComboBox();
+            LoadData();
         }
-
+        private void LoadComboBox()
+        {
+            var cbbItems = hocPhanBLL.GetAllHocPhanCBBs();
+            comboBox1.Items.Add("All");
+            comboBox1.Items.AddRange(cbbItems.ToArray());
+            comboBox1.SelectedIndex = 0;
+            comboBox2.Items.AddRange(new String[] { "No order","Id", "Tên sinh viên", "Lớp sinh hoạt", "Điểm bài tập", "Điểm giữa kỳ",
+            "Điểm cuối kỳ","Điểm tổng kết","Học phần"});
+            comboBox2.SelectedIndex = 0;
+        }
+        private void LoadData()
+        {
+            var name = textBox1.Text;
+            var lsh = comboBox1.SelectedItem.ToString();
+            var ob = comboBox2.SelectedItem.ToString();
+            dataGridView1.DataSource = sinhVienBLL.GetAllSinhVienDTOs(name, lsh, ob);
+        }
         private void Form1_Load(object sender, EventArgs e)
         {
 
