@@ -26,13 +26,11 @@ namespace CuoiKy.BLL
             }
             private set { }
         }
-        public List<SinhVienDTO> GetAllSinhVienDTOs(string name , string TenHocPhan, string orderBy )
+        public List<SinhVienDTO> GetAllSinhVienDTOs(string name = "", string TenHocPhan = "All", string orderBy = "No order")
         {
-            var result = _context.SinhViens
+            var result = _context.SinhViens.ToList().Select(s=>new SinhVienDTO(s))
                 .Where(s => String.IsNullOrEmpty(name) ? true : s.TenSinhVien.Contains(name))
-                .Where(s => TenHocPhan == "All"||String.IsNullOrEmpty(TenHocPhan) ? true : s.HocPhan.TenHocPhan.Contains(TenHocPhan)).ToList() //loc ra
-                .Select(s => new SinhVienDTO(s));//Only parameterless constructors and initializers are supported in LINQ to Entities
-                                                    //nen phai chuyen thanh DAO truoc do k tao query thang vao db dc
+                .Where(s => TenHocPhan=="All" ? true : s.TenHocPhan.Contains(TenHocPhan));
             if (orderBy == "Id") result.OrderByDescending(s => s.Id);
             if (orderBy == "Tên sinh viên") result.OrderByDescending(s => s.TenSinhVien);
             if (orderBy == "Lớp sinh hoạt") result.OrderByDescending(s => s.LopSinhHoat);
