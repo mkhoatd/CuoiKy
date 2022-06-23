@@ -59,6 +59,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BLL\HocPhanBLL.cs" />
+    <Compile Include="BLL\SinhvienBLL.cs" />
     <Compile Include="DAL\DiemHocPhanDbContext.cs" />
     <Compile Include="DetailForm.cs">
       <SubType>Form</SubType>
@@ -68,6 +69,9 @@
     </Compile>
     <Compile Include="DAO\HocPhan.cs" />
     <Compile Include="DAO\SinhVien.cs" />
+    <Compile Include="DTO\HocPhanCBB.cs" />
+    <Compile Include="DTO\HocPhanDTO.cs" />
+    <Compile Include="DTO\SinhVienDTO.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -37,14 +37,14 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.txtMSSV = new System.Windows.Forms.TextBox();
+            this.txtname = new System.Windows.Forms.TextBox();
+            this.txtdiembt = new System.Windows.Forms.TextBox();
+            this.txtdiemgk = new System.Windows.Forms.TextBox();
+            this.txtdiemck = new System.Windows.Forms.TextBox();
+            this.txttongket = new System.Windows.Forms.TextBox();
+            this.cbblopsh = new System.Windows.Forms.ComboBox();
+            this.cbbhocphan = new System.Windows.Forms.ComboBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.entityCommand1 = new System.Data.Entity.Core.EntityClient.EntityCommand();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -136,63 +136,63 @@
             this.label9.TabIndex = 8;
             this.label9.Text = "Tổng kết";
             // 
-            // textBox1
+            // txtMSSV
             // 
-            this.textBox1.Location = new System.Drawing.Point(99, 35);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(211, 20);
-            this.textBox1.TabIndex = 9;
+            this.txtMSSV.Location = new System.Drawing.Point(99, 35);
+            this.txtMSSV.Name = "txtMSSV";
+            this.txtMSSV.Size = new System.Drawing.Size(211, 20);
+            this.txtMSSV.TabIndex = 9;
             // 
-            // textBox2
+            // txtname
             // 
-            this.textBox2.Location = new System.Drawing.Point(99, 83);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(211, 20);
-            this.textBox2.TabIndex = 10;
+            this.txtname.Location = new System.Drawing.Point(99, 83);
+            this.txtname.Name = "txtname";
+            this.txtname.Size = new System.Drawing.Size(211, 20);
+            this.txtname.TabIndex = 10;
             // 
-            // textBox3
+            // txtdiembt
             // 
-            this.textBox3.Location = new System.Drawing.Point(474, 83);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(250, 20);
-            this.textBox3.TabIndex = 11;
+            this.txtdiembt.Location = new System.Drawing.Point(474, 83);
+            this.txtdiembt.Name = "txtdiembt";
+            this.txtdiembt.Size = new System.Drawing.Size(250, 20);
+            this.txtdiembt.TabIndex = 11;
             // 
-            // textBox4
+            // txtdiemgk
             // 
-            this.textBox4.Location = new System.Drawing.Point(474, 135);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(250, 20);
-            this.textBox4.TabIndex = 12;
+            this.txtdiemgk.Location = new System.Drawing.Point(474, 135);
+            this.txtdiemgk.Name = "txtdiemgk";
+            this.txtdiemgk.Size = new System.Drawing.Size(250, 20);
+            this.txtdiemgk.TabIndex = 12;
             // 
-            // textBox5
+            // txtdiemck
             // 
-            this.textBox5.Location = new System.Drawing.Point(474, 181);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(250, 20);
-            this.textBox5.TabIndex = 13;
+            this.txtdiemck.Location = new System.Drawing.Point(474, 181);
+            this.txtdiemck.Name = "txtdiemck";
+            this.txtdiemck.Size = new System.Drawing.Size(250, 20);
+            this.txtdiemck.TabIndex = 13;
             // 
-            // textBox6
+            // txttongket
             // 
-            this.textBox6.Location = new System.Drawing.Point(474, 233);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(250, 20);
-            this.textBox6.TabIndex = 14;
+            this.txttongket.Location = new System.Drawing.Point(474, 233);
+            this.txttongket.Name = "txttongket";
+            this.txttongket.Size = new System.Drawing.Size(250, 20);
+            this.txttongket.TabIndex = 14;
             // 
-            // comboBox1
+            // cbblopsh
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(99, 134);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(211, 21);
-            this.comboBox1.TabIndex = 15;
+            this.cbblopsh.FormattingEnabled = true;
+            this.cbblopsh.Location = new System.Drawing.Point(99, 134);
+            this.cbblopsh.Name = "cbblopsh";
+            this.cbblopsh.Size = new System.Drawing.Size(211, 21);
+            this.cbblopsh.TabIndex = 15;
             // 
-            // comboBox2
+            // cbbhocphan
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(99, 180);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(211, 21);
-            this.comboBox2.TabIndex = 16;
+            this.cbbhocphan.FormattingEnabled = true;
+            this.cbbhocphan.Location = new System.Drawing.Point(99, 180);
+            this.cbbhocphan.Name = "cbbhocphan";
+            this.cbbhocphan.Size = new System.Drawing.Size(211, 21);
+            this.cbbhocphan.TabIndex = 16;
             // 
             // dateTimePicker1
             // 
@@ -250,6 +250,7 @@
             this.btOK.TabIndex = 19;
             this.btOK.Text = "OK";
             this.btOK.UseVisualStyleBackColor = true;
+            this.btOK.Click += new System.EventHandler(this.btOK_Click);
             // 
             // btCancel
             // 
@@ -259,6 +260,7 @@
             this.btCancel.TabIndex = 20;
             this.btCancel.Text = "Cancel";
             this.btCancel.UseVisualStyleBackColor = true;
+            this.btCancel.Click += new System.EventHandler(this.btCancel_Click);
             // 
             // DetailForm
             // 
@@ -269,14 +271,14 @@
             this.Controls.Add(this.btOK);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.cbbhocphan);
+            this.Controls.Add(this.cbblopsh);
+            this.Controls.Add(this.txttongket);
+            this.Controls.Add(this.txtdiemck);
+            this.Controls.Add(this.txtdiemgk);
+            this.Controls.Add(this.txtdiembt);
+            this.Controls.Add(this.txtname);
+            this.Controls.Add(this.txtMSSV);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
@@ -288,6 +290,7 @@
             this.Controls.Add(this.label1);
             this.Name = "DetailForm";
             this.Text = "DetailForm";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.DetailForm_FormClosing);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -306,14 +309,14 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.TextBox txtMSSV;
+        private System.Windows.Forms.TextBox txtname;
+        private System.Windows.Forms.TextBox txtdiembt;
+        private System.Windows.Forms.TextBox txtdiemgk;
+        private System.Windows.Forms.TextBox txtdiemck;
+        private System.Windows.Forms.TextBox txttongket;
+        private System.Windows.Forms.ComboBox cbblopsh;
+        private System.Windows.Forms.ComboBox cbbhocphan;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Data.Entity.Core.EntityClient.EntityCommand entityCommand1;
         private System.Windows.Forms.GroupBox groupBox1;

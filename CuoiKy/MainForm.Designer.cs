@@ -73,6 +73,7 @@
             this.btSearch.TabIndex = 3;
             this.btSearch.Text = "Search";
             this.btSearch.UseVisualStyleBackColor = true;
+            this.btSearch.Click += new System.EventHandler(this.btSearch_Click);
             // 
             // btAdd
             // 
@@ -82,6 +83,7 @@
             this.btAdd.TabIndex = 4;
             this.btAdd.Text = "Add";
             this.btAdd.UseVisualStyleBackColor = true;
+            this.btAdd.Click += new System.EventHandler(this.btAdd_Click);
             // 
             // btUpdate
             // 
@@ -91,6 +93,7 @@
             this.btUpdate.TabIndex = 5;
             this.btUpdate.Text = "Update";
             this.btUpdate.UseVisualStyleBackColor = true;
+            this.btUpdate.Click += new System.EventHandler(this.btUpdate_Click);
             // 
             // btDel
             // 
@@ -100,6 +103,7 @@
             this.btDel.TabIndex = 6;
             this.btDel.Text = "Del";
             this.btDel.UseVisualStyleBackColor = true;
+            this.btDel.Click += new System.EventHandler(this.btDel_Click);
             // 
             // btSort
             // 
@@ -109,6 +113,7 @@
             this.btSort.TabIndex = 7;
             this.btSort.Text = "Sort";
             this.btSort.UseVisualStyleBackColor = true;
+            this.btSort.Click += new System.EventHandler(this.btSort_Click);
             // 
             // comboBox2
             // 

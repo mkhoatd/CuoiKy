@@ -26,5 +26,36 @@ namespace CuoiKy
         {
 
         }
+
+        private void btAdd_Click(object sender, EventArgs e)
+        {
+            DetailForm frm = new DetailForm();
+            frm.ShowDialog();
+        }
+
+        private void btUpdate_Click(object sender, EventArgs e)
+        {
+            if(dataGridView1.SelectedRows.Count == 1)
+            {
+                DetailForm form = new DetailForm(dataGridView1.SelectedRows[0].Cells[0].Value.ToString());
+            }
+            
+
+        }
+
+        private void btDel_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btSort_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btSearch_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
