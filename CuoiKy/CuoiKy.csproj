@@ -71,6 +71,7 @@
     <Compile Include="DAO\SinhVien.cs" />
     <Compile Include="DTO\HocPhanCBB.cs" />
     <Compile Include="DTO\HocPhanDTO.cs" />
+    <Compile Include="DTO\LopSinhHoatCBB.cs" />
     <Compile Include="DTO\SinhVienDTO.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>

@@ -14,6 +14,7 @@ namespace CuoiKy.DAO
         public bool GioiTinh { get; set; } 
         public double DiemBaiTap { get; set; }
         public double DiemGiuaKy { get; set; }
+        public double DiemCuoiKy { get; set; }
         public DateTime NgayThi { get; set; }
         public string HocPhanId { get; set; }
         public virtual HocPhan HocPhan { get; set; }
