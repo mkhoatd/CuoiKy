@@ -16,8 +16,8 @@ namespace CuoiKy.BLL
         {
             _context = new DiemHocPhanDbContext();
         }
-        private SinhVienBLL _instance { get; set; }
-        public SinhVienBLL Instance
+        private static SinhVienBLL _instance { get; set; }
+        public static SinhVienBLL Instance
         {
             get
             {
@@ -26,16 +26,18 @@ namespace CuoiKy.BLL
             }
             private set { }
         }
-        public List<SinhVienDTO> GetAllSinhVienDTOs(string name = "", string TenHocPhan = "", string orderBy = "")
+        public List<SinhVienDTO> GetAllSinhVienDTOs(string name = "", string TenHocPhan = "All", string orderBy = "No order")
         {
-            var result = _context.SinhViens.Select(s => new SinhVienDTO(s))
+            var result = _context.SinhViens.ToList().Select(s=>new SinhVienDTO(s))
                 .Where(s => String.IsNullOrEmpty(name) ? true : s.TenSinhVien.Contains(name))
-                .Where(s => string.IsNullOrEmpty(TenHocPhan) ? true : s.TenHocPhan.Contains(TenHocPhan));
+                .Where(s => TenHocPhan=="All" ? true : s.TenHocPhan.Contains(TenHocPhan));
             if (orderBy == "Id") result.OrderByDescending(s => s.Id);
             if (orderBy == "Tên sinh viên") result.OrderByDescending(s => s.TenSinhVien);
             if (orderBy == "Lớp sinh hoạt") result.OrderByDescending(s => s.LopSinhHoat);
             if (orderBy == "Điểm bài tập") result.OrderByDescending(s => s.DiemBaiTap);
             if (orderBy == "Điểm giữa kỳ") result.OrderByDescending(s => s.DiemGiuaKy);
+            if (orderBy == "Điểm cuối kỳ") result.OrderByDescending(s => s.DiemCuoiKy);
+            if (orderBy == "Điểm tổng kết") result.OrderByDescending(s => s.TongKet);
             if (orderBy == "Học phần") result.OrderByDescending(s => s.TenHocPhan);
             return result.ToList();
         }
