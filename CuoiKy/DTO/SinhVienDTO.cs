@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CuoiKy.DAO;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,26 @@ using System.Threading.Tasks;
 
 namespace CuoiKy.DTO
 {
-    internal class SinhVienDTO
+    public class SinhVienDTO
     {
+        public string Id { get; set; }
+        public string TenSinhVien { get; set; }
+        public string LopSinhHoat { get; set; }
+        public bool GioiTinh { get; set; }
+        public double DiemBaiTap { get; set; }
+        public double DiemGiuaKy { get; set; }
+        public DateTime NgayThi { get; set; }
+        public string TenHocPhan { get; set; }
+        public SinhVienDTO(SinhVien s)
+        {
+            Id = s.Id;
+            TenSinhVien = s.TenSinhVien;
+            LopSinhHoat = s.LopSinhHoat;
+            GioiTinh= s.GioiTinh;
+            DiemBaiTap = s.DiemBaiTap;
+            DiemGiuaKy = s.DiemGiuaKy;
+            NgayThi = s.NgayThi;
+            TenHocPhan = s.HocPhan.TenHocPhan;
+        }
     }
 }
