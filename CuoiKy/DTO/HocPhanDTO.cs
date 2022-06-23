@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace CuoiKy.DTO
 {
-    internal class HocPhanDTO
+    public class HocPhanDTO
     {
+        public string Id { get; set; }
+        public string TenHocPhan { get; set; }
+        
     }
 }
